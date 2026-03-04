@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane prefHeight="420" prefWidth="360" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="dk.easv.tictactoe.gui.controller.GameViewController">
+    <top>
+        <HBox alignment="CENTER" spacing="10">
+            <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+            <Label fx:id="statusLabel" text="Next: X">
+            <textFill>
+               <LinearGradient endX="0.7251184834123223" endY="1.0" startX="0.24644549763033174">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.7105262875556946" green="0.14144736528396606" blue="0.14144736528396606" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill></Label>
+            <Button onAction="#onNewGame" text="LET'S PLAY">
+            <textFill>
+               <LinearGradient endX="0.7251184834123223" endY="1.0" startX="0.24644549763033174">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.7105262875556946" green="0.14144736528396606" blue="0.14144736528396606" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill></Button>
+            <Button onAction="#onBack" text="Back">
+            <textFill>
+               <LinearGradient endX="0.7251184834123223" endY="1.0" startX="0.24644549763033174">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.7105262875556946" green="0.14144736528396606" blue="0.14144736528396606" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill></Button>
+        </HBox>
+    </top>
+    <center>
+        <StackPane BorderPane.alignment="CENTER">
+            <GridPane fx:id="gridPane" alignment="CENTER" hgap="5" vgap="5">
+                <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+            </GridPane>
+            <Label fx:id="overlayLabel" text="" visible="false" managed="false" style="-fx-font-size: 32px; -fx-text-fill: white; -fx-background-color: rgba(0,0,0,0.6); -fx-padding: 10 20; -fx-background-radius: 8;" StackPane.alignment="CENTER" />
+        </StackPane>
+    </center>
+</BorderPane>

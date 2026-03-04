@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane prefHeight="350" prefWidth="360" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="dk.easv.tictactoe.gui.controller.StartMenuController">
+    <center>
+        <VBox alignment="CENTER" spacing="12.0" BorderPane.alignment="CENTER">
+            <Label style="-fx-font-size:24px; -fx-font-weight:bold;" text="Tic-Tac-Toe">
+            <textFill>
+               <RadialGradient centerX="0.505524861878453" centerY="0.485781990521327" radius="0.5">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.7236841917037964" green="0.16081871092319489" blue="0.16081871092319489" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </RadialGradient>
+            </textFill></Label>
+            <Button onAction="#onTwoPlayers" prefWidth="200" text="2 Players">
+            <textFill>
+               <LinearGradient endX="0.7582938388625593" endY="1.0" startX="0.24644549763033174">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.7236841917037964" green="0.16081871092319489" blue="0.16081871092319489" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill></Button>
+            <Button onAction="#onOnePlayerSteroids" prefWidth="200" text="Player VS Steroids AI">
+            <textFill>
+               <LinearGradient endX="0.7582938388625593" endY="1.0" startX="0.24644549763033174">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.7236841917037964" green="0.16081871092319489" blue="0.16081871092319489" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill></Button>
+        </VBox>
+    </center>
+</BorderPane>

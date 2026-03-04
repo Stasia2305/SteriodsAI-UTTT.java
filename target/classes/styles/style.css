@@ -1,0 +1,7 @@
+
+.root {
+    -fx-font-family: "Segoe UI", Roboto, sans-serif;
+}
+.button {
+    -fx-font-size: 16px;
+}
