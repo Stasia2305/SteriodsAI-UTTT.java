@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class SteroidsAI implements AIPlayer {
 
-    private static final String BOT_NAME = "Steroids AI v2.0";
+    private static final String BOT_NAME = "Steroids AI";
     private static final int MAX_DEPTH = 6;
     private static final int[][] POSITIONAL_WEIGHTS = {
         {3, 2, 3},
