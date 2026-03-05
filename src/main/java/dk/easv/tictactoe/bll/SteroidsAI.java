@@ -5,10 +5,11 @@ import java.util.List;
 
 /**
  * Enhanced Steroids AI for Ultimate Tic-Tac-Toe.
- * Uses depth-limited Minimax with Alpha-Beta pruning and a sophisticated heuristic.
+ * Uses depth-limited Minimax with Alpha-Beta pruning.
  */
 public class SteroidsAI implements AIPlayer {
 
+    private static final String BOT_NAME = "Steroids AI v2.0";
     private static final int MAX_DEPTH = 6;
     private static final int[][] POSITIONAL_WEIGHTS = {
         {3, 2, 3},
@@ -17,14 +18,18 @@ public class SteroidsAI implements AIPlayer {
     };
 
     @Override
+    public String getBotName() {
+        return BOT_NAME;
+    }
+
+    @Override
     public int[] chooseMove(IGameBoard board, int aiPlayer) {
         int bestScore = Integer.MIN_VALUE;
-        int[] bestMove = null;
-
         List<int[]> moves = getAvailableMoves(board);
         if (moves.isEmpty()) return null;
+        
+        int[] bestMove = moves.get(0); // Initialize with first available move
 
-        // Sort moves to improve pruning (optional, but good)
         for (int[] move : moves) {
             GameBoard sim = new GameBoard(board);
             sim.play(move[0], move[1]);
@@ -43,6 +48,8 @@ public class SteroidsAI implements AIPlayer {
         }
 
         List<int[]> moves = getAvailableMoves(board);
+        if (moves.isEmpty()) return evaluate(board, aiPlayer, depth);
+
         if (isMaximizing) {
             int maxEval = Integer.MIN_VALUE;
             for (int[] move : moves) {
@@ -72,6 +79,7 @@ public class SteroidsAI implements AIPlayer {
         int winner = board.getWinner();
         if (winner == aiPlayer) return 100000 - depth;
         if (winner != -1) return -100000 + depth;
+        if (board.isGameOver()) return 0; // Draw
 
         int score = 0;
         int opponent = 1 - aiPlayer;

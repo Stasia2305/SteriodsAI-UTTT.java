@@ -10,4 +10,10 @@ public interface AIPlayer {
      * Return null if no move possible.
      */
     int[] chooseMove(IGameBoard board, int aiPlayer);
+
+    /**
+     * Get the name of the AI.
+     * @return String name of the bot.
+     */
+    String getBotName();
 }
